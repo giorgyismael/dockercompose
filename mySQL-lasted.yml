@@ -1,0 +1,19 @@
+version: '3.3'
+name: mysql-latest
+services:
+  mySQL:
+    image: mysql:latest
+    container_name: mysql-latest
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      #MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'gioliveira'
+      #MYSQL_PASSWORD: 'neo@12345'
+      MYSQL_ROOT_PASSWORD: 'neo@12345'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - D:\DockerCompose\MySQLVolumes:/var/lib/mysql

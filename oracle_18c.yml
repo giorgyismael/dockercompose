@@ -1,0 +1,13 @@
+version: '3'
+name: "oracle_18c"
+services:
+  db:
+    image: oracle/database:18.4.0-xe
+    container_name: oracle-18.4.0
+    environment:
+      ORACLE_PWD: neo012345
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - D:\DockerCompose\OracleVolume18c:/opt/oracle/oradata

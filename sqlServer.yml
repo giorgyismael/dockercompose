@@ -1,0 +1,15 @@
+version: '3.4'
+name: "SQLServer-2017"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: SqlServer
+    restart: always
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=neo@123
+     - MSSQL_PID=Developer
+    ports:
+     - "1433:1433"
+    volumes:
+     - D:\DockerCompose\SqlServerVolumes:/var/opt/mssql/data
